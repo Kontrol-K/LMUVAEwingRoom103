@@ -1,0 +1,107 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{688DA283-FC45-49AF-A4F2-24CAF39F1C39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>LMU.VA.Ewing.Room117</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>LMU.VA.Ewing.Room117</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Base Touch Panel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Base Touch Panel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\USA-VA-Ewing-DVTC-Room103\Control\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Qsc.Qsys.Crestron">
+      <HintPath>..\..\USA-VA-Ewing-DVTC-Room103\Control\Qsc.Qsys.Crestron.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TCPClient">
+      <HintPath>..\..\USA-VA-Ewing-DVTC-Room103\Control\TCPClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\AudioManager.cs" />
+    <Compile Include="Audio\DspControl.cs" />
+    <Compile Include="Audio\IMute.cs" />
+    <Compile Include="Audio\INamedControl.cs" />
+    <Compile Include="Audio\IVolume.cs" />
+    <Compile Include="Audio\IVolumeControl.cs" />
+    <Compile Include="Audio\IVolumeWithHold.cs" />
+    <Compile Include="Audio\NamedControl.cs" />
+    <Compile Include="Audio\QscQsys\QscDsp.cs" />
+    <Compile Include="Audio\QscQsys\QscNamedControl.cs" />
+    <Compile Include="Audio\QscQsys\QscVolumeControl.cs" />
+    <Compile Include="Audio\VolumeControl.cs" />
+    <Compile Include="Cameras\Args\CameraManagementEventArgs.cs" />
+    <Compile Include="Cameras\Camera.cs" />
+    <Compile Include="Cameras\CameraManager.cs" />
+    <Compile Include="Cameras\CameraSwitching\CameraSwitchingBase.cs" />
+    <Compile Include="Cameras\CameraSwitching\ICameraSwitching.cs" />
+    <Compile Include="Cameras\CameraSwitching\QscQsysCameraSwitching.cs" />
+    <Compile Include="Cameras\CameraTypes\QscQsysCamera.cs" />
+    <Compile Include="Cameras\ICamera.cs" />
+    <Compile Include="Cameras\IPower.cs" />
+    <Compile Include="ControlSystem.cs" />
+    <Compile Include="EPages.cs" />
+    <Compile Include="ESourceButton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomInformation.cs" />
+    <Compile Include="Shutdown.cs" />
+    <Compile Include="UI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Crestron.SimplSharp.SDK.Program">
+      <Version>2.20.42</Version>
+    </PackageReference>
+    <Reference Include="Qsc.Qsys.Crestron">
+      <HintPath>Qsc.Qsys.Crestron.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Interface\LMU_DVTC_VHS_Clinical_Room117_v2.1.sgd">
+      <Link>Assets\LMU_DVTC_VHS_Clinical_Room117_v2.1.sgd</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
